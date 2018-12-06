@@ -37,4 +37,3 @@ while anyReactions:
         i += 1
 
 print(len(dataArray))
-print(dataArray)
