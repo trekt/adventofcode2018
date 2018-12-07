@@ -9,7 +9,7 @@ anyReactions = True
 while anyReactions:
     anyReactions = False
     i = 0
-    print(len(dataArray))
+    #print(len(dataArray))
 
     while i < len(dataArray):
         if i+1 < len(dataArray):

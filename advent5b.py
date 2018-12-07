@@ -39,20 +39,19 @@ def activateReactions(inputArray):
 
     return len(inputArray)
 
+def remove_values_from_list(the_list, val):
+       return [value for value in the_list if value != val]
+
 currentLetter = 97
 currentUpperCaseLetter = 65
 currentLowest = 50000
-j = 26
+j = 0
 
-while j > 0:
+while j < 26:
     deletedElementList = dataArray.copy()
-    k = 0
-    while k < len(deletedElementList):
-        if ord(deletedElementList[k]) == currentUpperCaseLetter:
-            deletedElementList.remove(chr(currentUpperCaseLetter))
-        if ord(deletedElementList[k]) == currentLetter:
-            deletedElementList.remove(chr(currentLetter))
-        k += 1
+    deletedElementList = remove_values_from_list(deletedElementList, chr(currentLetter))
+    deletedElementList = remove_values_from_list(deletedElementList, chr(currentUpperCaseLetter))
+
     print("Length of array after deletion ", len(deletedElementList))
 
     size = activateReactions(deletedElementList)
@@ -62,7 +61,7 @@ while j > 0:
 
     currentLetter += 1
     currentUpperCaseLetter += 1
-    j -= 1
+    j += 1
 print(currentLowest)
 
 
